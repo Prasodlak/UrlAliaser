@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<form th:action="@{/save-link}" method="post">
+    <label for="url">URL</label></br>
+    <input th:value="${url}" type="text" id="url" name="url" required></br>
+
+    <label for="alias">Alias</label></br>
+    <input th:value="${alias}" type="text" id="alias" name="alias" required></br>
+
+    <button class="btn btn-success" type="submit">Submit</button>
+<p th:text="${successMessage}"></p>
+    <p style="color: red" th:text="${errorMessage}"></p>
+</form>
+</body>
+</html>
